@@ -1,0 +1,5 @@
+Please place your mentor images in this folder:
+1. harsha.jpg
+2. nishant.jpg
+
+The application is configured to look for these specific filenames.
