@@ -1,0 +1,294 @@
+# One Tapp University - Cursor Rules for Component Development
+
+## Tech Stack & Dependencies
+
+### Core Framework
+- React 19.2+ with TypeScript
+- Vite 6+ as build tool
+- Client-side rendering (CSR)
+- Tailwind CSS (loaded via CDN in index.html)
+
+### Key Libraries
+- **lucide-react** (^0.562.0) - Icon library, use for all icons
+- **@google/genai** (^1.34.0) - AI service integration
+- No Material UI or component libraries - build custom components
+
+## File Organization
+
+### Structure
+```
+components/
+  - ComponentName.tsx (PascalCase, descriptive)
+  - Button.tsx (reusable primitives)
+services/
+  - serviceName.ts (camelCase)
+types.ts (shared TypeScript types)
+```
+
+### Component Naming
+- Components: PascalCase (e.g., `Hero.tsx`, `RegistrationModal.tsx`)
+- Files match component name exactly
+- Exports: Named export with matching name (e.g., `export const Hero: React.FC<HeroProps>`)
+
+## Component Structure Pattern
+
+### Standard Component Template
+```typescript
+import React, { useState, useEffect } from 'react';
+import { IconName1, IconName2 } from 'lucide-react';
+import { Button } from './Button'; // Import reusable components
+
+interface ComponentNameProps {
+  // Define all props with TypeScript
+  propName: string;
+  optionalProp?: boolean;
+  onAction?: () => void;
+}
+
+export const ComponentName: React.FC<ComponentNameProps> = ({ 
+  propName, 
+  optionalProp = false,
+  onAction 
+}) => {
+  const [state, setState] = useState<Type>(initialValue);
+
+  // useEffect for side effects (scroll, lifecycle)
+  useEffect(() => {
+    // Side effect logic
+    return () => {
+      // Cleanup
+    };
+  }, [dependencies]);
+
+  return (
+    <section className="py-20 bg-black relative overflow-hidden">
+      {/* Component JSX */}
+    </section>
+  );
+};
+```
+
+### Component Patterns
+1. **Functional Components Only** - Use React.FC with TypeScript interfaces
+2. **Named Exports** - Always use named exports: `export const ComponentName`
+3. **Props Interface** - Always define props with TypeScript interface
+4. **Default Props** - Use default parameters in function signature
+5. **State Management** - Use `useState` for local state, `useEffect` for side effects
+
+## Styling & Theme System
+
+### Tailwind CSS Configuration
+- Loaded via CDN in index.html
+- Custom brand colors configured in Tailwind config:
+  ```javascript
+  brand: {
+    50: '#f0f9ff',
+    100: '#e0f2fe',
+    500: '#0ea5e9',  // Primary brand blue
+    600: '#0284c7',
+    900: '#0c4a6e',
+  }
+  ```
+
+### Color Palette
+- **Background**: `bg-black` (primary), `bg-slate-900` (sections)
+- **Text**: `text-white` (primary), `text-slate-300` (secondary), `text-slate-400` (tertiary), `text-slate-500` (muted)
+- **Brand**: `bg-brand-500`, `text-brand-500`, `border-brand-500`
+- **Accents**: Purple (`purple-500`), Blue (`blue-500`), Green (`green-500`), Pink (`pink-500`)
+
+### Typography
+- **Display Font**: `font-display` (Space Grotesk, 500/700)
+- **Body Font**: `font-sans` (Inter, 300-800)
+- **Sizes**: Use Tailwind scale (text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-3xl, text-4xl, text-5xl)
+- **Headings**: `text-3xl md:text-5xl font-display font-bold` (responsive)
+
+### Spacing & Layout
+- **Section Padding**: `py-20` or `py-24` for major sections
+- **Container**: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8` (standard responsive container)
+- **Gaps**: `gap-4`, `gap-6`, `gap-8` for spacing between elements
+- **Borders**: `border-white/5`, `border-white/10` for subtle dividers
+
+### Visual Effects
+- **Backdrop Blur**: `backdrop-blur-md`, `backdrop-blur-sm`
+- **Gradients**: `bg-gradient-to-b from-black to-slate-900`
+- **Shadows**: `shadow-xl`, `shadow-2xl`, `shadow-brand-900/20`
+- **Glow Effects**: Large blurred circles: `bg-brand-500/10 rounded-full blur-[120px]`
+
+## Component Patterns & Conventions
+
+### Section Components
+- Always wrap in `<section>` with semantic classes
+- Include background effects (gradient blurs) for depth
+- Use `relative overflow-hidden` for positioned elements
+- Add `id` attributes for scroll navigation: `id="section-name"`
+
+### Button Component
+- Use the reusable `<Button>` component from `./components/Button`
+- Variants: `primary`, `secondary`, `outline`
+- Props: `variant`, `fullWidth`, standard button props
+- Example: `<Button variant="secondary" onClick={handler}>Text</Button>`
+
+### Icons
+- Always use **lucide-react** icons
+- Import specific icons: `import { IconName } from 'lucide-react'`
+- Use as components: `<IconName className="w-4 h-4" />`
+- Common sizing: `w-4 h-4` (small), `w-5 h-5` (medium), `w-6 h-6` (large)
+
+### Animations & Transitions
+- **Transitions**: `transition-all duration-300`
+- **Hover Effects**: `hover:scale-105`, `hover:opacity-100`, `hover:bg-white/10`
+- **Animations**: `animate-pulse`, `animate-ping` for attention
+- **Smooth Scrolling**: `scroll-smooth` on html element
+
+### State Management
+- **Local State**: `useState` for component-level state
+- **Form State**: Manage in component, use controlled inputs
+- **Modal State**: Parent component manages open/close state
+- **Scroll State**: Use `useEffect` with scroll listeners
+
+### Responsive Design
+- **Mobile First**: Base styles for mobile, add `md:`, `lg:` breakpoints
+- **Breakpoints**: `sm:`, `md:`, `lg:` (640px, 768px, 1024px)
+- **Hide/Show**: `hidden md:block`, `md:hidden`
+- **Grid**: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`
+- **Flex**: `flex-col md:flex-row`
+
+## Code Quality Standards
+
+### TypeScript
+- **Strict Types**: Define all props, state, and function return types
+- **Interfaces**: Use interfaces for component props
+- **No `any`**: Avoid `any` type, use proper types or `unknown`
+- **Optional Props**: Mark with `?` and provide defaults
+
+### Component Best Practices
+1. **Single Responsibility** - Each component has one clear purpose
+2. **Composition** - Build complex components from simple ones
+3. **Reusability** - Extract reusable patterns (e.g., Button, Card)
+4. **Props Over State** - Prefer props for data passed down
+5. **Cleanup** - Always cleanup event listeners and intervals in useEffect
+
+### Code Style
+- **Indentation**: 2 spaces
+- **Quotes**: Single quotes for strings, double for JSX attributes
+- **Semicolons**: Use semicolons
+- **Line Length**: Keep lines readable, break long expressions
+
+## Reusability Guidelines
+
+### When Creating New Components
+1. **Check First** - Analyze existing components for reuse
+2. **Adapt Components** - Modify existing components to fit content, don't modify content to fit components
+3. **Extract Patterns** - If pattern repeats 3+ times, consider extracting to reusable component
+4. **Props Over Duplication** - Use props to customize rather than duplicating code
+
+### Reusable Components to Leverage
+- `<Button>` - Standard button with variants
+- Existing section patterns (Hero, Pricing, FAQ structure)
+- Modal patterns (see RegistrationModal for modal structure)
+
+## Content & Copy Guidelines
+
+### Content Handling
+- **DO NOT** invent content - use provided content verbatim
+- **DO NOT** optimize or rewrite copy
+- **DO** follow provided content document exactly
+- **DO** preserve meaning and tone
+
+### Icons Selection
+- Search **lucide-react** for appropriate icons
+- Use semantic icon names that match content
+- Maintain consistency in icon style across similar elements
+
+## Performance Considerations
+
+### Optimization
+- **Lazy Loading**: Consider for heavy components (images, modals)
+- **Event Cleanup**: Always cleanup event listeners
+- **Conditional Rendering**: Use `&&` or ternary for conditional content
+- **Memoization**: Use `useMemo`/`useCallback` only when necessary
+
+### Loading States
+- Show loading indicators for async operations
+- Use skeleton states for better UX
+- Handle error states gracefully
+
+## Accessibility Requirements
+
+### Semantic HTML
+- Use proper semantic elements (`<section>`, `<nav>`, `<main>`, `<header>`, `<footer>`)
+- Proper heading hierarchy (h1 → h2 → h3)
+- Form labels associated with inputs
+
+### Interactive Elements
+- Keyboard navigable (tab order)
+- Focus states visible (`focus:ring-2`)
+- ARIA labels where needed (`aria-label`, `aria-expanded`)
+- Button elements for interactive actions (not divs with onClick)
+
+## Common Patterns Reference
+
+### Scroll Navigation
+```typescript
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+```
+
+### Modal Management
+```typescript
+const [isOpen, setIsOpen] = useState(false);
+// In parent component, manage modal state
+// Pass to modal: isOpen, onClose callback
+```
+
+### Background Gradients
+```typescript
+<div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] -z-10" />
+```
+
+### Responsive Container
+```typescript
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* Content */}
+</div>
+```
+
+## Development Workflow
+
+### Before Implementing
+1. Analyze existing components for reuse opportunities
+2. Create component plan mapping sections to components
+3. Identify which components can be reused, adapted, or need creation
+4. Review content requirements vs component structure
+
+### During Implementation
+1. Follow component structure pattern
+2. Use Tailwind CSS for all styling (no inline styles except dynamic values)
+3. Import icons from lucide-react
+4. Maintain TypeScript types throughout
+5. Test responsive behavior at all breakpoints
+
+### After Implementation
+1. Verify responsive design (mobile, tablet, desktop)
+2. Check accessibility (keyboard navigation, screen reader)
+3. Ensure proper cleanup in useEffect hooks
+4. Validate props typing
+5. Confirm component matches design system
+
+---
+
+## Quick Reference
+
+**Icons**: `lucide-react` - search for semantic names
+**Styling**: Tailwind CSS - use utility classes, brand colors
+**Components**: Custom React components - no Material UI
+**Theme**: Dark theme with brand-500 blue accents
+**Typography**: Space Grotesk (display), Inter (body)
+**Layout**: Max-width containers with responsive padding
+**Reusability**: Analyze first, adapt existing components before creating new ones
+**Content**: Follow provided content verbatim - do not invent or optimize copy
+
