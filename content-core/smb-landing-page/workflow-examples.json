@@ -1,0 +1,30 @@
+{
+    "workflows": [
+        {
+            "name": "Contract Review and Management",
+            "description": "Review, manage and automate inbound contracts",
+            "tools": ["OpenAI, Copilot, or Gemini for business tasks", "Prompt patterns for reliability and structure", "Custom assistants for recurring work"],
+            "flow-wrapper": "n8n",
+            "flow": [
+                {
+                    "name": "Ingest Contract",
+                    "description": "Ingest the contract into the system",
+                    "tools": ["Email Trigger (Google Email)"]
+                },
+                 {"name":"Extract Contract Terms",
+                    "description": "Extract the contract terms into the system",
+                    "tools": ["Open AI", "Supabase"]
+                },   
+                {
+                    "name": "Apply Policy & Assess Risk",
+                    "tools": ["Open AI"]
+                },
+                {
+                    "name": "Respond Commercially",
+                    "description": "Respond commercially",
+                    "tools": ["Gemini Workspace"]
+                }
+            ]
+        }
+    ]
+}

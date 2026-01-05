@@ -37,11 +37,11 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
             </div>
 
             <div className="mb-6 flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-white">₹100</span>
+              <span className="text-4xl font-bold text-white">₹199</span>
               <span className="text-sm text-slate-400 font-medium">+ GST</span>
               <span className="px-2 py-0.5 bg-red-500/10 text-red-400 text-xs font-bold rounded ml-2">70% OFF</span>
             </div>
-            <div className="text-slate-600 line-through text-sm mb-8">Original Price: ₹350</div>
+            <div className="text-slate-600 line-through text-sm mb-8">Original Price: ₹999</div>
 
             <div className="space-y-4 mb-8 flex-grow">
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Includes</div>
@@ -105,11 +105,11 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
             </div>
 
             <div className="mb-6 flex items-baseline gap-2">
-              <span className="text-5xl font-bold text-white tracking-tight">₹1,000</span>
+              <span className="text-5xl font-bold text-white tracking-tight">₹999</span>
               <span className="text-sm text-slate-400 font-medium">+ GST</span>
               <span className="px-2 py-0.5 bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-bold rounded ml-2">80% OFF</span>
             </div>
-             <div className="text-slate-500 line-through text-sm mb-8">Original Price: ₹5,000</div>
+             <div className="text-slate-500 line-through text-sm mb-8">Original Price: ₹4,999</div>
 
             <ul className="space-y-4 mb-8 flex-grow">
               <li className="flex items-start text-sm text-white font-medium bg-brand-500/10 p-2 rounded-lg border border-brand-500/20">
