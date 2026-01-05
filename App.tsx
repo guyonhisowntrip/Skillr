@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Hero } from './components/Hero';
 import { ProblemSolution } from './components/ProblemSolution';
 import { Curriculum } from './components/Curriculum';
@@ -10,6 +11,7 @@ import { Pricing } from './components/Pricing';
 import { Mentors } from './components/Mentors';
 import { ToolStack } from './components/ToolStack';
 import { Contact } from './components/Contact';
+import { SMBLanding } from './pages/SMBLanding';
 import { 
   StickyNote, GitFork, Clock, Sparkles, Calendar, Bell, ArrowRight, ArrowDown, ArrowLeft,
   MessageSquare, Tag, ShieldCheck, Bot, UserCheck, Brain, Zap
@@ -72,7 +74,7 @@ const DesktopArrow = () => (
   </div>
 );
 
-function App() {
+function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [initialRegType, setInitialRegType] = useState<'weekend' | 'builder'>('builder');
   const [activeTab, setActiveTab] = useState<'decision' | 'customer'>('decision');
@@ -219,7 +221,7 @@ function App() {
                 <div className="mt-12 md:mt-16 pt-8 border-t border-white/5 text-center">
                    <p className="text-slate-300 font-medium italic text-sm md:text-lg leading-relaxed">
                      {activeTab === 'decision' 
-                       ? <>“You don’t manage decisions. <br className="md:hidden"/>AI makes sure they don’t pile up.”</>
+                       ? <>“You don't manage decisions. <br className="md:hidden"/>AI makes sure they don't pile up.”</>
                        : <>“Fast responses without breaking the rules.”</>
                      }
                    </p>
@@ -259,6 +261,17 @@ function App() {
 
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ai-for-smbs" element={<SMBLanding />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
