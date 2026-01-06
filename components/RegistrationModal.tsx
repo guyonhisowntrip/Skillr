@@ -277,7 +277,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               <BookOpen className="w-4 h-4" />
               <div className="flex flex-col leading-none items-start">
                 <span>Weekend Pass</span>
-                <span className="text-[10px] opacity-70 mt-1">₹100 (Learning Only)</span>
+                <span className="text-[10px] opacity-70 mt-1">₹99 (Learning Only)</span>
               </div>
             </button>
             <button
@@ -292,7 +292,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               <Zap className="w-4 h-4 fill-current" />
               <div className="flex flex-col leading-none items-start">
                 <span>Builder Pass</span>
-                <span className="text-[10px] opacity-90 mt-1">₹1,000 (Sprint + Clinic)</span>
+                <span className="text-[10px] opacity-90 mt-1">₹999 (Sprint + Clinic)</span>
               </div>
             </button>
           </div>
@@ -532,7 +532,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
                   </>
                 ) : (
                   <>
-                    Complete Registration (₹{regType === 'builder' ? '1,000' : '100'})
+                    Complete Registration (₹{regType === 'builder' ? '999' : '199'})
                     <Send className="w-5 h-5" />
                   </>
                 )}
