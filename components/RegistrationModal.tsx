@@ -170,7 +170,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
         regType, // 'weekend' or 'builder'
         cohortName: COHORTS.find(c => c.id === formData.cohortId)?.dates || formData.cohortId,
         submittedAt: new Date().toISOString(),
-        price: regType === 'builder' ? 1000 : 100,
+        price: regType === 'builder' ? 999 : 199,
       };
 
       const response = await fetch('https://n8n.agiworkflow.in/webhook/registration', {
