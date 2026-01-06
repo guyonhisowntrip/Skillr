@@ -1,5 +1,7 @@
 import React from 'react';
 import { Linkedin, Award } from 'lucide-react';
+import harshaImage from '../images/harsha.jpeg';
+import dipeshImage from '../images/dipesh.jpeg';
 
 const trainers = [
   {
@@ -8,7 +10,7 @@ const trainers = [
     experience: "10+ Years building AI/ML implmentations, accelerators & deploying live agents for enterprise clients. Ex-BITS Pilani",
     bio: "Specializes in deep-tech architecture, machine learning, Generative AI pipelines, and Agentic AI systems.",
     institution: "AI Expert & Lead Instructor",
-    image: "images/harsha.jpg",
+    image: harshaImage,
     linkedin: "https://www.linkedin.com/in/harsha-varun-11a5382b/"
   },
   {
@@ -26,7 +28,7 @@ const trainers = [
     experience: "12+ Years in AI. Heads Onetapp Consulting. Helps businesses implement practical AI solutions.",
     bio: "Focuses on making AI accessible and driving business impact through AI, with expertise in strategy and implementation of large AI-powered business solutions.",
     institution: "AI Strategist",
-    image: "images/dipesh.jpg", // Placeholder - update with actual image URL
+    image: dipeshImage,
     linkedin: "https://www.linkedin.com/in/dipesh-lakhotia/" // Placeholder - update with actual LinkedIn URL
   }
 ];
@@ -95,7 +97,6 @@ export const TrainerSection: React.FC = () => {
                             <Award className="w-5 h-5 text-brand-400" />
                           </div>
                           <div>
-                              <div className="text-white font-bold text-lg leading-none mb-1.5">{trainer.years}</div>
                               <div className="text-slate-300 text-sm leading-snug font-medium opacity-90">{trainer.experience}</div>
                           </div>
                       </div>

@@ -29,18 +29,11 @@ const PROGRAM_OPTIONS = [
 ];
 
 const COHORT_OPTIONS = [
-  'Next cohort (Month, Year)',
-  'Following cohort (Month, Year)',
+  'February 2026 (Dates TBA)',
+  'March 2026 (Dates TBA)',
   'Flexible',
 ];
 
-const TEAM_SIZE_OPTIONS = [
-  'Just me',
-  '2–3 people',
-  '4–6 people',
-  '7–10 people',
-  'More than 10',
-];
 
 const INITIAL_DATA: FormData = {
   name: '',
@@ -108,8 +101,13 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
       newErrors.cohortDate = 'Please select a preferred cohort start date';
     }
 
-    if (!formData.teamSize) {
-      newErrors.teamSize = 'Please select team size';
+    if (!formData.teamSize.trim()) {
+      newErrors.teamSize = 'Team size is required';
+    } else {
+      const teamSizeNum = parseInt(formData.teamSize, 10);
+      if (isNaN(teamSizeNum) || teamSizeNum <= 0) {
+        newErrors.teamSize = 'Please enter a number greater than 0';
+      }
     }
 
     return newErrors;
@@ -140,7 +138,7 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
         submittedAt: new Date().toISOString(),
       };
 
-      const response = await fetch('https://n8n.agiworkflow.in/webhook/registration', {
+      const response = await fetch('https://n8n.agiworkflow.in/webhook-test/registration-smb', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -170,7 +168,7 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
         <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onClick={onClose} />
         <div className="relative bg-white rounded-2xl w-full max-w-lg p-8 text-center shadow-2xl">
           <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors">
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" stroke-current stroke-2 />
           </button>
           
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -213,9 +211,9 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
           </div>
           <button 
             onClick={onClose}
-            className="p-2 -mr-2 text-slate-400 hover:bg-slate-50 hover:text-slate-600 rounded-full transition-colors"
+            className="p-2 -mr-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900 rounded-full transition-colors"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 stroke-current stroke-2" />
           </button>
         </div>
 
@@ -342,19 +340,17 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
               <label htmlFor="teamSize" className="block text-sm font-semibold text-slate-700 mb-2">
                 How many people from your team might join? <span className="text-red-500">*</span>
               </label>
-              <select
+              <input
+                type="number"
                 id="teamSize"
                 value={formData.teamSize}
                 onChange={(e) => handleInputChange('teamSize', e.target.value)}
+                min="1"
+                step="1"
                 className={`${inputBaseClasses} ${errors.teamSize ? 'border-red-500 focus:ring-red-200 focus:border-red-500' : 'border-slate-200 focus:border-brand-500 focus:ring-brand-500/20'}`}
-              >
-                <option value="">Select an option</option>
-                {TEAM_SIZE_OPTIONS.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+                placeholder="Enter a number > 0"
+              />
+              <p className="mt-1 text-xs text-slate-500">Enter a number &gt; 0</p>
               {errors.teamSize && (
                 <p className="mt-1 text-sm text-red-500 flex items-center gap-1">
                   <AlertCircle className="w-4 h-4" />
@@ -386,12 +382,10 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
               </div>
             )}
 
-            <Button
+            <button
               type="submit"
-              variant="secondary"
-              fullWidth
               disabled={isSubmitting}
-              className="mt-8 py-4 text-lg font-bold bg-brand-600 text-white hover:bg-brand-500 border-none"
+              className="w-full mt-8 py-4 text-lg font-bold bg-brand-600 text-white hover:bg-brand-500 border-none rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 inline-flex items-center justify-center"
             >
               {isSubmitting ? (
                 <>
@@ -404,7 +398,7 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
                   Register Your Interest
                 </>
               )}
-            </Button>
+            </button>
           </form>
         </div>
       </div>
