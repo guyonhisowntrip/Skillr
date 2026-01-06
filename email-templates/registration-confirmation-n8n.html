@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to One Tapp University - SMB AI Program</title>
+    <!--[if mso]>
+    <style type="text/css">
+        body, table, td {font-family: Arial, sans-serif !important;}
+    </style>
+    <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                <!-- Main Container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #000000; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    
+                    <!-- Header with Logo -->
+                    <tr>
+                        <td style="padding: 40px 40px 30px; text-align: center; background: linear-gradient(to bottom, #000000, #0c1a24);">
+                            <img src="https://storage.googleapis.com/onetapp/brand%20%26%20favicon/Button.svg" alt="One Tapp University" style="max-width: 180px; height: auto; display: block; margin: 0 auto;">
+                        </td>
+                    </tr>
+
+                    <!-- Warm Greeting Section -->
+                    <tr>
+                        <td style="padding: 40px 40px 20px;">
+                            <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #ffffff; font-family: 'Space Grotesk', 'Inter', Arial, sans-serif; line-height: 1.3;">
+                                Thank you for your interest!
+                            </h1>
+                            <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.6; color: #cbd5e1;">
+                                Hi <strong style="color: #ffffff;">{{ $json.fullName }}</strong>,
+                            </p>
+                            <p style="margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: #cbd5e1;">
+                                We're excited that you're interested in our <strong style="color: #0ea5e9;">AI Systems Sprint for SMBs</strong>. Your commitment to making AI work for your business is exactly what this program is designed for.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Confirmation of Intent -->
+                    <tr>
+                        <td style="padding: 20px 40px;">
+                            <div style="background-color: #1e293b; border-left: 4px solid #0ea5e9; padding: 20px; border-radius: 8px;">
+                                <h2 style="margin: 0 0 16px; font-size: 20px; font-weight: 600; color: #ffffff; font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;">
+                                    Your Registration Details
+                                </h2>
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #94a3b8; width: 140px;">Program Option:</td>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #ffffff; font-weight: 500;">{{ $json.programOption }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #94a3b8;">Team Size:</td>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #ffffff; font-weight: 500;">{{ $json.teamSize }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #94a3b8;">Preferred Start:</td>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #ffffff; font-weight: 500;">{{ $json.cohortDate }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #94a3b8;">Company:</td>
+                                        <td style="padding: 8px 0; font-size: 14px; color: #ffffff; font-weight: 500;">{{ $json.companyName }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Pricing Details -->
+                    <tr>
+                        <td style="padding: 20px 40px;">
+                            <h2 style="margin: 0 0 20px; font-size: 22px; font-weight: 600; color: #ffffff; font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;">
+                                Pricing & Payment Details
+                            </h2>
+                            <div style="background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 8px;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 12px 0; border-bottom: 1px solid #334155;">
+                                            <div style="font-size: 16px; color: #ffffff; font-weight: 600;">Program Fee</div>
+                                            <div style="font-size: 14px; color: #94a3b8; margin-top: 4px;">{{ $json.programOption }}</div>
+                                        </td>
+                                        <td style="padding: 12px 0; border-bottom: 1px solid #334155; text-align: right;">
+                                            <div style="font-size: 24px; color: #0ea5e9; font-weight: 700;">{{ $json.programPrice }}</div>
+                                            <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">per learner</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="padding: 16px 0 0;">
+                                            <div style="font-size: 14px; color: #cbd5e1; line-height: 1.6;">
+                                                <strong style="color: #ffffff;">Includes:</strong> Live sessions, recordings, hands-on exercises, and access to all program materials.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <!-- Payment Process -->
+                            <div style="margin-top: 24px; padding: 20px; background-color: #0c1a24; border-radius: 8px; border: 1px solid #0ea5e9;">
+                                <h3 style="margin: 0 0 12px; font-size: 18px; font-weight: 600; color: #0ea5e9;">Next Steps - Payment Process</h3>
+                                <ol style="margin: 0; padding-left: 20px; color: #cbd5e1; font-size: 14px; line-height: 1.8;">
+                                    <li style="margin-bottom: 8px; color: #cbd5e1;">Our team will review your registration and reach out within <strong style="color: #ffffff;">24-48 hours</strong>.</li>
+                                    <li style="margin-bottom: 8px; color: #cbd5e1;">We'll send you a secure payment link via email.</li>
+                                    <li style="margin-bottom: 8px; color: #cbd5e1;">Once payment is confirmed, you'll receive access to the program materials and cohort schedule.</li>
+                                    <li style="color: #cbd5e1;">You'll be added to the program communication channel for updates and coordination.</li>
+                                </ol>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Teasers Section -->
+                    <tr>
+                        <td style="padding: 20px 40px;">
+                            <h2 style="margin: 0 0 20px; font-size: 22px; font-weight: 600; color: #ffffff; font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;">
+                                Get a Head Start
+                            </h2>
+                            
+                            <!-- YouTube Teaser -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="background-color: #1e293b; border-radius: 8px; padding: 20px; border: 1px solid #334155;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td width="60" style="vertical-align: top;">
+                                                    <div style="width: 48px; height: 48px; background-color: #dc2626; border-radius: 8px; display: inline-block; text-align: center; line-height: 48px;">
+                                                        <span style="color: #ffffff; font-size: 24px;">▶</span>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 16px;">
+                                                    <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: #ffffff;">Watch: Program Overview</h3>
+                                                    <p style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; line-height: 1.5;">
+                                                        Get a preview of what you'll learn and how the program is structured.
+                                                    </p>
+                                                    <a href="{{ $json.youtubeLink || 'https://youtube.com/your-video-link' }}" style="display: inline-block; padding: 10px 20px; background-color: #0ea5e9; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600;">Watch Video →</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- PDF Teaser -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="background-color: #1e293b; border-radius: 8px; padding: 20px; border: 1px solid #334155;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td width="60" style="vertical-align: top;">
+                                                    <div style="width: 48px; height: 48px; background-color: #0ea5e9; border-radius: 8px; display: inline-block; text-align: center; line-height: 48px;">
+                                                        <span style="color: #ffffff; font-size: 24px;">📄</span>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 16px;">
+                                                    <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: #ffffff;">Download: Program Guide</h3>
+                                                    <p style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; line-height: 1.5;">
+                                                        Download our detailed program guide with module breakdowns and learning outcomes.
+                                                    </p>
+                                                    <a href="{{ $json.pdfLink || 'https://your-domain.com/program-guide.pdf' }}" style="display: inline-block; padding: 10px 20px; background-color: #0ea5e9; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 600;">Download PDF →</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 40px 40px 30px; background-color: #0c1a24; border-top: 1px solid #334155;">
+                            <p style="margin: 0 0 16px; font-size: 14px; color: #94a3b8; text-align: center; line-height: 1.6;">
+                                We're here to help! If you have any questions, feel free to reply to this email or reach out to us.
+                            </p>
+                            <p style="margin: 0 0 24px; font-size: 14px; color: #94a3b8; text-align: center; line-height: 1.6;">
+                                Looking forward to having you in the program!
+                            </p>
+                            <p style="margin: 0; font-size: 14px; color: #64748b; text-align: center;">
+                                Best regards,<br>
+                                <strong style="color: #0ea5e9;">The One Tapp University Team</strong>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Signature/Footer Links -->
+                    <tr>
+                        <td style="padding: 30px 40px; background-color: #000000; border-top: 1px solid #334155;">
+                            <p style="margin: 0 0 12px; font-size: 12px; color: #64748b; text-align: center;">
+                                <a href="https://university.onetapp.in" style="color: #0ea5e9; text-decoration: none;">One Tapp University</a> | 
+                                <a href="https://university.onetapp.in/ai-for-smbs" style="color: #0ea5e9; text-decoration: none;">SMB Program</a>
+                            </p>
+                            <p style="margin: 0; font-size: 12px; color: #64748b; text-align: center;">
+                                © 2024 One Tapp University. All rights reserved.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
