@@ -277,7 +277,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               <BookOpen className="w-4 h-4" />
               <div className="flex flex-col leading-none items-start">
                 <span>Weekend Pass</span>
-                <span className="text-[10px] opacity-70 mt-1">₹99 (Learning Only)</span>
+                <span className="text-[10px] opacity-70 mt-1">₹199 (Learning Only)</span>
               </div>
             </button>
             <button
@@ -301,7 +301,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
           {regType === 'weekend' && (
              <div className="bg-orange-50 border border-orange-100 rounded-lg p-3 text-sm text-orange-800 flex gap-2 items-start cursor-pointer hover:bg-orange-100 transition-colors" onClick={() => setRegType('builder')}>
                <Star className="w-4 h-4 mt-0.5 shrink-0" />
-               <p><strong>Recommendation:</strong> Get the Builder Pass (₹1,000) to access the 2-week execution clinic, mentor reviews, and certification. <span className="underline">Switch to Builder Pass</span></p>
+               <p><strong>Recommendation:</strong> Get the Builder Pass to access the 2-week execution clinic, mentor reviews, and certification. <span className="underline">Switch to Builder Pass</span></p>
              </div>
           )}
 
