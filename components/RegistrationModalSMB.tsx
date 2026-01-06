@@ -138,7 +138,7 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
         submittedAt: new Date().toISOString(),
       };
 
-      const response = await fetch('https://n8n.agiworkflow.in/webhook-test/registration-smb', {
+      const response = await fetch('https://n8n.agiworkflow.in/webhook/registration-smb', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
