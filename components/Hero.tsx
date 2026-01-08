@@ -139,7 +139,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
             </span>
-            Next Cohort: Jan 17th & 18th | Limited Spots
+            Next Cohort: Jan 24 & 25 | Limited Spots
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-6 leading-tight">

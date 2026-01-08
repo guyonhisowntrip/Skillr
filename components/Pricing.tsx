@@ -143,7 +143,7 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
         
         <div className="mt-12 text-center">
             <p className="text-sm text-slate-500">
-                Prices exclusive of GST. Need a custom enterprise plan? <a href="mailto:info.otu@onetapp.in" className="text-slate-400 underline hover:text-white">Contact Sales</a>
+                Prices exclusive of taxes. Need a custom enterprise plan? <a href="mailto:workshops@onetappuni.in" className="text-slate-400 underline hover:text-white">Contact Sales</a>
             </p>
         </div>
       </div>

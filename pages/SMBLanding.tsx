@@ -12,6 +12,7 @@ import { Testimonials } from '../components/Testimonials';
 import { FAQSMB } from '../components/FAQSMB';
 import { Footer } from '../components/Footer';
 import { RegistrationModalSMB } from '../components/RegistrationModalSMB';
+import {Contact} from '../components/Contact'; //@cursor:  add contact component
 
 export const SMBLanding: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,6 +40,7 @@ export const SMBLanding: React.FC = () => {
         <TrainerSection />
         <Testimonials />
         <FAQSMB />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
         <div className="mt-4 flex justify-center gap-6 text-sm text-slate-600">
           <a href="#" className="hover:text-slate-400 transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-slate-400 transition-colors">Terms of Service</a>
-          <a href="mailto:info.otu@onetapp.in" className="hover:text-slate-400 transition-colors">Contact</a>
+          <a href="mailto:workshops@onetappuni.in" className="hover:text-slate-400 transition-colors">Contact</a>
         </div>
       </div>
     </footer>

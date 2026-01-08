@@ -37,7 +37,6 @@ interface CohortOption {
 }
 
 const COHORTS: CohortOption[] = [
-  { id: 'batch_jan17', dates: 'Jan 17 & 18', label: 'Filling Fast 🔥', sub: 'Sat & Sun' },
   { id: 'batch_jan24', dates: 'Jan 24 & 25', sub: 'Sat & Sun' },
   { id: 'batch_jan31', dates: 'Jan 31 & Feb 1', sub: 'Sat & Sun' },
 ];
@@ -309,7 +308,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
 
             {/* Cohort Selection */}
             <div className="space-y-3" id="field-cohortId">
-              <label className="block text-sm font-semibold text-slate-700">Select Cohort Date</label>
+              <label className="block text-sm font-semibold text-slate-700">Preferred Cohort Date</label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {COHORTS.map((cohort) => (
                   <button

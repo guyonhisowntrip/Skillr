@@ -16,9 +16,9 @@ export const Contact: React.FC = () => {
     {
       icon: Mail,
       title: "Email Us",
-      value: "info.otu@onetapp.in",
+      value: "workshops@onetappuni.in",
       sub: "For detailed corporate inquiries",
-      href: "mailto:info.otu@onetapp.in",
+      href: "mailto:workshops@onetappuni.in",
       color: "text-blue-500",
       bg: "bg-blue-500/10",
       borderColor: "hover:border-blue-500/30"

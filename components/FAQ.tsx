@@ -167,11 +167,6 @@ const faqs: FAQItem[] = [
   },
   {
     category: 'Projects',
-    q: "Is there a certificate at the end?",
-    a: "No formal certification. The primary outcome is what you build, not a credential. You’ll leave with a real project, reusable workflows, and practical confidence — which is far more valuable in practice."
-  },
-  {
-    category: 'Projects',
     q: "Will my project be showcased publicly?",
     a: "Selected projects may be showcased as examples for future cohorts or case studies based on practical value and clarity. This is optional; there is no pressure to participate in public showcases."
   },
