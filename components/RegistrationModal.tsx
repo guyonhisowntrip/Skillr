@@ -425,7 +425,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
                   type="text" 
                   value={formData.orgName}
                   onChange={(e) => handleInputChange('orgName', e.target.value)}
-                  placeholder="Company or School name"
+                  placeholder="Company or Institute name"
                   className={`${inputBaseClasses} border-slate-200 focus:border-brand-500 focus:ring-brand-500/20`}
                 />
               </div>
