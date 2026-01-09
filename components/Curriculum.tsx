@@ -217,7 +217,7 @@ export const Curriculum: React.FC = () => {
                  {/* Tablet: 2 cols, Desktop: 3 cols */}
                  <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
                    {[
-                     "Daily Mentor Feedback",
+                     "Alternate Day Mentor Feedback",
                      "Debug 'Stuck' Workflows",
                      "Refining Prompts",
                      "Final Showcase",

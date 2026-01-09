@@ -363,13 +363,13 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="field-email" className="text-sm font-semibold text-slate-700">Work Email <span className="text-brand-500">*</span></label>
+                <label htmlFor="field-email" className="text-sm font-semibold text-slate-700">Email <span className="text-brand-500">*</span></label>
                 <input 
                   id="field-email"
                   type="email" 
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  placeholder="jane@company.com" 
+                  placeholder="jane@example.com" 
                   className={`${inputBaseClasses} ${
                     errors.email ? 'border-red-500 focus:ring-red-200 focus:border-red-500' : 'border-slate-200 focus:border-brand-500 focus:ring-brand-500/20'
                   }`}
@@ -417,14 +417,15 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
 
               <div className="space-y-1.5">
                 <label htmlFor="field-orgName" className="text-sm font-semibold text-slate-700 flex items-center gap-2">
-                  Organization / Company
+                  Organization / Institution
+                  <span className="text-xs font-normal text-slate-400 font-sans">(Optional)</span>
                 </label>
                 <input 
                   id="field-orgName"
                   type="text" 
                   value={formData.orgName}
                   onChange={(e) => handleInputChange('orgName', e.target.value)}
-                  placeholder="Acme Inc." 
+                  placeholder="Company or School name"
                   className={`${inputBaseClasses} border-slate-200 focus:border-brand-500 focus:ring-brand-500/20`}
                 />
               </div>
