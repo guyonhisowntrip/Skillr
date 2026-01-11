@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BookOpen, Cpu, Rocket, CheckCircle2, PenTool, Sparkles, Trophy, Clock } from 'lucide-react';
+import React from 'react';
+import { BookOpen, Cpu, Rocket, CheckCircle2, PenTool, Sparkles, Trophy, Clock, Download, FileText } from 'lucide-react';
 
 export const Curriculum: React.FC = () => {
   return (
@@ -11,6 +11,46 @@ export const Curriculum: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">The AI Systems Sprint</h2>
           <p className="text-slate-400 text-lg">A structured journey from understanding tools to deploying autonomous agents.</p>
+        </div>
+
+        {/* Detailed Agenda Download Card */}
+        <div className="mb-10 max-w-2xl mx-auto">
+          <a 
+            href="https://storage.googleapis.com/onetapp/worshop%20schedule/Workshop%20Detailed%20Agenda%20-%20OneTapp%20University.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Workshop Detailed Agenda - OneTapp University.pdf"
+            className="group block bg-gradient-to-br from-brand-500/10 via-brand-600/5 to-purple-500/10 border border-brand-500/30 rounded-2xl p-6 hover:border-brand-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/20 hover:-translate-y-1"
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              {/* Icon Section */}
+              <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
+                <FileText className="w-8 h-8 text-white" />
+              </div>
+              
+              {/* Content Section */}
+              <div className="flex-grow text-center sm:text-left">
+                <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                  <h3 className="text-lg font-bold text-white group-hover:text-brand-300 transition-colors">
+                    Download Detailed Workshop Agenda
+                  </h3>
+                  <Download className="w-5 h-5 text-brand-400 group-hover:text-brand-300 group-hover:translate-y-0.5 transition-all duration-300" />
+                </div>
+                <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
+                  Get the complete schedule with session timings, topics, and learning outcomes for Day 1, Day 2, and the 2-Week Sprint.
+                </p>
+              </div>
+              
+              {/* Download Button */}
+              <div className="flex-shrink-0">
+                <div className="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-lg transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-500/40 flex items-center gap-2 whitespace-nowrap">
+                  <Download className="w-4 h-4" />
+                  <span className="hidden sm:inline">Download PDF</span>
+                  <span className="sm:hidden">Download</span>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div className="space-y-5">
