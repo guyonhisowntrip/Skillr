@@ -134,12 +134,21 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           
           {/* Next Cohort Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-medium mb-8 animate-fade-in backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-            </span>
-            Next Cohort: Jan 24 & 25 | Limited Spots
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm font-bold uppercase tracking-wide animate-fade-in backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+              </span>
+              🖥️ 100% Virtual / Online
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-medium backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+              </span>
+              Next Cohort: Jan 24 & 25 | Limited Spots
+            </div>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-6 leading-tight">
@@ -151,7 +160,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
           </div>
           
           <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-            A Guided Weekend + Build Sprint on Generative & Agentic AI.
+            A Guided <span className="text-white font-medium">Virtual Weekend</span> + <span className="text-white font-medium">Virtual Build Sprint</span> on Generative & Agentic AI.
             <br />
             <span className="text-slate-500">For non-technical professionals, students, and builders.</span>
           </p>
