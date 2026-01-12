@@ -176,9 +176,20 @@ export const RegistrationModalSMB: React.FC<RegistrationModalSMBProps> = ({ isOp
           </div>
           
           <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Thanks for registering your interest.</h2>
-          <p className="text-slate-600 mb-8 leading-relaxed">
+          <p className="text-slate-600 mb-6 leading-relaxed">
             We'll reach out shortly with cohort details and next steps.
           </p>
+
+          {/* Spam Folder Callout */}
+          <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3 text-left">
+            <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="flex-grow">
+              <p className="text-sm font-semibold text-amber-900 mb-1">Check Your Spam Folder</p>
+              <p className="text-xs text-amber-700 leading-relaxed">
+                Sometimes our emails end up in spam. Please check your spam/junk folder if you don't see our email in your inbox within a few minutes.
+              </p>
+            </div>
+          </div>
 
           <button 
             onClick={onClose}

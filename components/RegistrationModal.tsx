@@ -212,10 +212,21 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
           </div>
           
           <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Registration Complete!</h2>
-          <p className="text-slate-600 mb-8 leading-relaxed">
+          <p className="text-slate-600 mb-6 leading-relaxed">
             Thank you for registering for the <span className="font-semibold text-brand-600">{regType === 'builder' ? 'Builder Pass' : 'Weekend Pass'}</span>, <span className="font-semibold text-slate-900">{formData.name}</span>. 
             We've sent a confirmation email to <span className="font-semibold text-slate-900">{formData.email}</span> with payment instructions.
           </p>
+
+          {/* Spam Folder Callout */}
+          <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3 text-left">
+            <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="flex-grow">
+              <p className="text-sm font-semibold text-amber-900 mb-1">Check Your Spam Folder</p>
+              <p className="text-xs text-amber-700 leading-relaxed">
+                Sometimes our emails end up in spam. Please check your spam/junk folder if you don't see the confirmation email in your inbox within a few minutes.
+              </p>
+            </div>
+          </div>
 
           <button 
             onClick={onClose}
