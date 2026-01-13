@@ -37,8 +37,12 @@ interface CohortOption {
 }
 
 const COHORTS: CohortOption[] = [
-  { id: 'batch_jan24', dates: 'Jan 24 & 25', sub: 'Sat & Sun' },
-  { id: 'batch_jan31', dates: 'Jan 31 & Feb 1', sub: 'Sat & Sun' },
+  { 
+    id: 'batch_jan31', 
+    dates: 'Jan 31 & Feb 1', 
+    sub: 'Sat & Sun • Limited seats • Cohort filling fast',
+    label: 'Limited seats'
+  },
 ];
 
 interface FormData {
@@ -260,7 +264,10 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               </span>
               <h2 className="text-xl font-display font-bold text-slate-900">Secure Your Spot</h2>
             </div>
-            <p className="text-sm text-slate-500 pl-10">Join the next cohort of AI builders.</p>
+            <p className="text-sm text-slate-500 pl-10">
+              Join the Jan 31 &amp; Feb 1 cohort of AI builders.
+              <span className="ml-1 font-semibold text-brand-600">Limited seats, filling fast.</span>
+            </p>
           </div>
           <button 
             onClick={onClose}
