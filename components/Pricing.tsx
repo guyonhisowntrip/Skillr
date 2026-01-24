@@ -15,11 +15,13 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Choose Your Path</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Register Your Interest</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Whether you just want to learn the concepts or build a complete system, we have a spot for you.
+            Register your interest to receive teaser slides and YouTube videos covering our workflows and discussions.
             <br className="hidden md:block" />
-            <span className="text-brand-400 font-medium">Early bird prices active.</span>
+            <span className="text-brand-400 font-medium">Choose to pay once you understand what we're offering.</span>
+            <br className="hidden md:block" />
+            <span className="text-slate-500 text-base">Early bird prices active. Limited seats available.</span>
           </p>
         </div>
 
@@ -78,7 +80,7 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
             </div>
 
             <Button variant="outline" fullWidth onClick={() => onRegister('weekend')} className="border-slate-700 hover:bg-slate-800 hover:text-white">
-              Select Weekend Pass
+              Register Interest for Weekend Pass
             </Button>
           </div>
 
@@ -132,7 +134,7 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
 
             <Button variant="primary" fullWidth onClick={() => onRegister('builder')} className="bg-white text-black hover:bg-slate-200 font-bold py-4 text-lg shadow-xl shadow-white/10 border-none">
               <Zap className="w-5 h-5 mr-2 text-brand-600" />
-              Become a Builder
+              Register Interest for Builder Pass
             </Button>
             
             <p className="text-center text-xs text-slate-500 mt-4">

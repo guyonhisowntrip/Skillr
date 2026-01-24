@@ -241,13 +241,15 @@ function HomePage() {
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to Build Real AI Systems?</h2>
             <p className="text-xl text-slate-400 mb-8">
               Move beyond "using AI" and start <span className="text-white font-medium">designing with AI</span>.
+              <br />
+              <span className="text-brand-400 font-medium">Register your interest to receive teaser slides and videos.</span>
             </p>
             <div className="inline-flex flex-col items-center">
                <button 
                 onClick={() => openModal('builder')}
                 className="px-8 py-4 bg-white text-black font-bold text-lg rounded-lg hover:bg-slate-200 transition-colors shadow-lg shadow-white/10"
                >
-                Register Now
+                Register Your Interest
               </button>
               <p className="mt-4 text-sm text-slate-500 font-medium">
                 Limited seats available for the next cohort

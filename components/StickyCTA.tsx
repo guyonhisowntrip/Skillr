@@ -38,7 +38,7 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({ onRegister }) => {
         <div className="flex gap-4 w-full sm:w-auto justify-center sm:justify-end items-center">
           <span className="hidden lg:inline text-xs text-slate-400 font-medium"> <span className="text-red-400 font-bold">5 spots</span> left at this price</span>
           <Button variant="primary" className="py-2 text-sm bg-white text-black hover:bg-slate-200 border-none font-bold shadow-lg shadow-white/10" onClick={onRegister}>
-            Secure Your Spot
+            Register Your Interest
           </Button>
         </div>
       </div>

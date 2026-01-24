@@ -215,10 +215,18 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
             <PartyPopper className="w-10 h-10 text-green-600" />
           </div>
           
-          <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Registration Complete!</h2>
+          <h2 className="text-2xl font-display font-bold text-slate-900 mb-2">Interest Registration Complete!</h2>
           <p className="text-slate-600 mb-6 leading-relaxed">
-            Thank you for registering for the <span className="font-semibold text-brand-600">{regType === 'builder' ? 'Builder Pass' : 'Weekend Pass'}</span>, <span className="font-semibold text-slate-900">{formData.name}</span>. 
-            We've sent a confirmation email to <span className="font-semibold text-slate-900">{formData.email}</span> with payment instructions.
+            Thank you for registering your interest for the <span className="font-semibold text-brand-600">{regType === 'builder' ? 'Builder Pass' : 'Weekend Pass'}</span>, <span className="font-semibold text-slate-900">{formData.name}</span>. 
+            We've sent a confirmation email to <span className="font-semibold text-slate-900">{formData.email}</span> with:
+          </p>
+          <ul className="text-slate-600 mb-6 leading-relaxed text-left list-disc list-inside space-y-2">
+            <li>Teaser slides covering our workflows and discussions</li>
+            <li>YouTube videos explaining our approach and methodologies</li>
+            <li>QR code for easy access to resources</li>
+          </ul>
+          <p className="text-slate-600 mb-6 leading-relaxed">
+            Review the content and choose to pay once you understand what we're offering. <span className="font-semibold text-brand-600">Limited seats available.</span>
           </p>
 
           {/* Spam Folder Callout */}
@@ -262,11 +270,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-100 text-brand-600">
                 <Star className="w-4 h-4 fill-brand-600" />
               </span>
-              <h2 className="text-xl font-display font-bold text-slate-900">Secure Your Spot</h2>
+              <h2 className="text-xl font-display font-bold text-slate-900">Register Your Interest</h2>
             </div>
             <p className="text-sm text-slate-500 pl-10">
-              Join the Jan 31 &amp; Feb 1 cohort of AI builders.
-              <span className="ml-1 font-semibold text-brand-600">Limited seats, filling fast.</span>
+              Register your interest to receive teaser slides, YouTube videos, and QR code.
+              <span className="ml-1 font-semibold text-brand-600">You can choose to pay after reviewing the content.</span>
             </p>
           </div>
           <button 
@@ -550,7 +558,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
                   </>
                 ) : (
                   <>
-                    Complete Registration (₹{regType === 'builder' ? '999' : '199'})
+                    Register Your Interest
                     <Send className="w-5 h-5" />
                   </>
                 )}

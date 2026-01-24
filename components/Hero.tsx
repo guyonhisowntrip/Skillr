@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
                onClick={onRegister} 
                className="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-lg transition-all border border-brand-500 shadow-lg shadow-brand-500/20 font-semibold hover:scale-105 active:scale-95"
              >
-               Register Now
+               Register Your Interest
              </button>
            </div>
            
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
                onClick={handleRegisterClick} 
                className="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-brand-500/20 w-full"
              >
-               Register Now
+               Register Your Interest
              </button>
         </div>
       </div>
@@ -163,6 +163,8 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
             A Guided <span className="text-white font-medium">Virtual Weekend</span> + <span className="text-white font-medium">Virtual Build Sprint</span> on Generative & Agentic AI.
             <br />
             <span className="text-slate-500">For non-technical professionals, students, and builders.</span>
+            <br />
+            <span className="text-brand-400 font-medium">Register your interest to receive teaser slides and videos covering our workflows and discussions.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
