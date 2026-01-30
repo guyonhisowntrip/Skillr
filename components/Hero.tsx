@@ -142,12 +142,18 @@ export const Hero: React.FC<HeroProps> = ({ onRegister }) => {
               </span>
               🖥️ 100% Virtual / Online
             </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/30 text-red-300 text-sm font-medium backdrop-blur-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              Jan 31st Cohort Registration Closed
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-medium backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
               </span>
-              Cohort: Jan 31 &amp; Feb 1 • Limited seats • Filling fast
+              Upcoming Cohort Dates: To Be Decided
             </div>
           </div>
           

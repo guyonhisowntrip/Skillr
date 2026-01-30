@@ -252,7 +252,7 @@ function HomePage() {
                 Register Your Interest
               </button>
               <p className="mt-4 text-sm text-slate-500 font-medium">
-                Limited seats available for the next cohort
+                Upcoming cohort dates to be decided
               </p>
             </div>
           </div>

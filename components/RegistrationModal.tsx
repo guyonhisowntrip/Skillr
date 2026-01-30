@@ -40,8 +40,14 @@ const COHORTS: CohortOption[] = [
   { 
     id: 'batch_jan31', 
     dates: 'Jan 31 & Feb 1', 
-    sub: 'Sat & Sun • Limited seats • Cohort filling fast',
-    label: 'Limited seats'
+    sub: 'Registration Closed',
+    label: 'Closed'
+  },
+  { 
+    id: 'batch_upcoming', 
+    dates: 'Upcoming Cohort', 
+    sub: 'Dates to be decided • We will notify you',
+    label: 'Upcoming'
   },
 ];
 
@@ -70,7 +76,7 @@ const INITIAL_DATA: FormData = {
   experience: '',
   referral: '',
   newsletter: true,
-  cohortId: COHORTS[0].id,
+  cohortId: COHORTS.find(c => c.id === 'batch_upcoming')?.id || COHORTS[0].id,
 };
 
 export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, onClose, initialRegType = 'builder' }) => {
@@ -136,7 +142,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
       }
     }
 
-    if (!formData.cohortId) newErrors.cohortId = "Please select a cohort date";
+    if (!formData.cohortId) {
+      newErrors.cohortId = "Please select a cohort date";
+    } else if (formData.cohortId === 'batch_jan31') {
+      newErrors.cohortId = "Jan 31st cohort registration is closed. Please select upcoming cohort.";
+    }
     if (!formData.experience) newErrors.experience = "Please select your experience level";
 
     return newErrors;
@@ -335,34 +345,53 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
             {/* Cohort Selection */}
             <div className="space-y-3" id="field-cohortId">
               <label className="block text-sm font-semibold text-slate-700">Preferred Cohort Date</label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {COHORTS.map((cohort) => (
-                  <button
-                    key={cohort.id}
-                    type="button"
-                    onClick={() => handleInputChange('cohortId', cohort.id)}
-                    className={`relative p-3 rounded-xl border text-left transition-all ${
-                      formData.cohortId === cohort.id
-                        ? 'border-brand-500 bg-brand-50 ring-1 ring-brand-500'
-                        : 'border-slate-200 bg-white hover:border-slate-300'
-                    }`}
-                  >
-                    {formData.cohortId === cohort.id && (
-                      <div className="absolute top-2 right-2 text-brand-600">
-                        <CheckCircle2 className="w-4 h-4 fill-brand-100" />
+              <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-xs text-red-700 font-medium">
+                  <span className="font-bold">Jan 31st Cohort Registration Closed.</span> Register your interest for upcoming cohorts.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {COHORTS.map((cohort) => {
+                  const isClosed = cohort.id === 'batch_jan31';
+                  return (
+                    <button
+                      key={cohort.id}
+                      type="button"
+                      onClick={() => !isClosed && handleInputChange('cohortId', cohort.id)}
+                      disabled={isClosed}
+                      className={`relative p-3 rounded-xl border text-left transition-all ${
+                        isClosed
+                          ? 'border-slate-300 bg-slate-100 opacity-60 cursor-not-allowed'
+                          : formData.cohortId === cohort.id
+                          ? 'border-brand-500 bg-brand-50 ring-1 ring-brand-500'
+                          : 'border-slate-200 bg-white hover:border-slate-300'
+                      }`}
+                    >
+                      {formData.cohortId === cohort.id && !isClosed && (
+                        <div className="absolute top-2 right-2 text-brand-600">
+                          <CheckCircle2 className="w-4 h-4 fill-brand-100" />
+                        </div>
+                      )}
+                      {cohort.label && (
+                        <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mb-1 ${
+                          isClosed 
+                            ? 'bg-red-100 text-red-700' 
+                            : cohort.id === 'batch_upcoming'
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-orange-100 text-orange-700'
+                        }`}>
+                          {cohort.label}
+                        </span>
+                      )}
+                      <div className={`font-bold text-sm ${formData.cohortId === cohort.id && !isClosed ? 'text-brand-900' : 'text-slate-900'}`}>
+                        {cohort.dates}
                       </div>
-                    )}
-                    {cohort.label && (
-                      <span className="inline-block px-1.5 py-0.5 rounded bg-orange-100 text-orange-700 text-[10px] font-bold uppercase tracking-wide mb-1">
-                        {cohort.label}
-                      </span>
-                    )}
-                    <div className={`font-bold text-sm ${formData.cohortId === cohort.id ? 'text-brand-900' : 'text-slate-900'}`}>
-                      {cohort.dates}
-                    </div>
-                    <div className="text-xs text-slate-500 font-medium mt-0.5">{cohort.sub}</div>
-                  </button>
-                ))}
+                      <div className={`text-xs font-medium mt-0.5 ${isClosed ? 'text-red-600' : 'text-slate-500'}`}>
+                        {cohort.sub}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
               {errors.cohortId && <p className="text-xs text-red-500 font-medium">{errors.cohortId}</p>}
             </div>

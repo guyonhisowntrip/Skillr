@@ -21,8 +21,14 @@ export const Pricing: React.FC<PricingProps> = ({ onRegister }) => {
             <br className="hidden md:block" />
             <span className="text-brand-400 font-medium">Choose to pay once you understand what we're offering.</span>
             <br className="hidden md:block" />
-            <span className="text-slate-500 text-base">Early bird prices active. Limited seats available.</span>
+            <span className="text-slate-500 text-base">Upcoming cohort dates to be decided.</span>
           </p>
+          <div className="mt-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg max-w-2xl mx-auto">
+            <p className="text-sm text-amber-200">
+              <span className="font-semibold">Note:</span> The prices shown below were for the Jan 31st cohort (now closed). 
+              The next cohort will have updated pricing announced soon.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
